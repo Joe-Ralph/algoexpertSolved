@@ -1,8 +1,10 @@
-tempinp = [3,4,2,1,2,3]
+# tempinp = [3,4,2,1,2,3]
+
+inp = [3,4,2,1,2,3,7,1,1,1,3]
 
 
 
-minim = float('inf')
+# minim = float('inf')
 # O(product(arr)) , O(product(arr)) ! Dont Use
 # def minJumpsRec(arr):
 #     minJumpsUtil(arr,0,0)
@@ -19,3 +21,14 @@ minim = float('inf')
 
 
 # print(minJumpsRec(tempinp))
+
+def minJumps(arr):
+    jumps = [float('inf') for _ in range(len(arr))]
+    jumps[0] = 0
+    for i in range(1,len(arr)):
+        for j in range(i):
+            if j+arr[j] >= i:
+                jumps[i] = min(jumps[i],jumps[j]+1)
+    return jumps[-1]
+
+print(minJumps(inp))
