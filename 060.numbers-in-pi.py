@@ -7,9 +7,10 @@ def numbersInPi(arr,string):
     hashset  = set(arr)
     def numbersInPiUtil(string,start,depth):
         global minDepth
-        if start == len(string):
-            minDepth = min(depth,minDepth)
-            return 
+        print(string)
+        if 0 == len(string):
+            minDepth = min(depth-1,minDepth)
+            return
         for i in range(1,len(string)+1):
             if string[:i] in hashset:
                 numbersInPiUtil(string[i:],i+1,depth+1)
