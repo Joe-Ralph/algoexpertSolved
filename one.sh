@@ -1,1 +1,6 @@
-for f in *.py; do python"$f"; done
+#!/bin/bash
+
+for py_file in $(find ../one -name *.py)
+do
+    python3 $py_file >> temp.txt
+done
