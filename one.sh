@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for py_file in $(find ../one -name *.py)
+for py_file in $(find ../one -name '*.py')
 do
-    python3 $py_file >> temp.txt
+    python3 $py_file
 done
